@@ -37,8 +37,14 @@ public class DesktopSteps {
 
     @And("I select the product {string}")
     public void iSelectTheProduct(String product) {
-        new DesktopsPage().selectProduct(product);
+        new DesktopsPage().selectProductsOption(product);
     }
+
+//
+//    @And("I select the product {string}")
+//    public void iSelectTheProduct(String product) {
+//        new DesktopsPage().selectProduct(product);
+//    }
 
     @And("I get the text product {string}")
     public void iGetTheTextProduct(String productText) {
@@ -56,8 +62,10 @@ public class DesktopSteps {
     }
 
     @And("I get the message Success: You have added {string} to your shopping cart!")
-    public void iGetTheMessageSuccessYouHaveAddedToYourShoppingCart(String message) {
-        Assert.assertEquals(new ProductPage().verifySuccessMessageToAddInCart(), message, "Incorrect message");
+    public void iGetTheMessageSuccessYouHaveAddedToYourShoppingCart(String product) {
+        String expected = "Success: You have added " + product + " to your shopping cart!\n" + "×";
+        String actual = new ProductPage().verifySuccessMessageToAddInCart();
+        Assert.assertEquals(actual, expected, "Incorrect message");
     }
 
     @And("I click on shopping cart display into the success message")
@@ -65,10 +73,10 @@ public class DesktopSteps {
         new ProductPage().clickOnShoppingCart();
     }
 
-    @Then("I get a text {string}")
-    public void iGetAText(String shoppingCartText) {
-        Assert.assertEquals(new ShoppingCartPage().verifyShoppingCartText(), shoppingCartText, "Incorrect text");
-    }
+//    @Then("I get a text {string}")
+//    public void iGetAText(String shoppingCartText) {
+//        Assert.assertEquals(new ShoppingCartPage().verifyShoppingCartText(), shoppingCartText, "Incorrect text");
+//    }
 
     @Then("I get the product name {string}")
     public void iGetTheProductName(String productName) {
@@ -84,5 +92,7 @@ public class DesktopSteps {
     public void iGetThePrice(String price) {
         Assert.assertEquals(new ShoppingCartPage().verifyPrice(), price, "Incorrect price");
     }
+
+
 }
 

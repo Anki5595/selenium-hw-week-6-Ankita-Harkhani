@@ -16,16 +16,15 @@ public class ShoppingCartPage extends Utility {
     WebElement text;
 
     @CacheLookup
-    @FindBy(css = "body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > form:nth-child(2) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) > a:nth-child(1)")
+    @FindBy(xpath = "//div[@class = 'table-responsive']/table/tbody/tr/td[2]/a")
     WebElement productName;
 
-
     @CacheLookup
-    @FindBy(css = "body > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(2)")
+    @FindBy(xpath = "//div[@class = 'table-responsive']/table/tbody/tr/td[3]")
     WebElement model;
 
     @CacheLookup
-    @FindBy(css = "ul[class='list-unstyled'] li h2")
+    @FindBy(xpath = "//div[@class = 'table-responsive']/table/tbody/tr/td[6]")
     WebElement price;
 
     @CacheLookup

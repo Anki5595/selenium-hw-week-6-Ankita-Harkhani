@@ -8,7 +8,7 @@ Feature: Visitors from different country are coming to UK for different purpose
     Given I am on Home page
     When I click on start button
 
-    @sanity @smoke
+  @sanity @smoke
   Scenario: Australian user should coming to UK for tourism
     And I select nationality "Australia"
     And I click on continue button
@@ -27,7 +27,7 @@ Feature: Visitors from different country are coming to UK for different purpose
     And I click a continue button
     Then I get result "You need a visa to work in health and care"
 
-        @sanity
+  @sanity
   Scenario: Columbian national user coming to the UK to join a partner for a long stay they do have an article 10 or 20 card
     And I select The nationality "Cambodia"
     And I clicks on continue button

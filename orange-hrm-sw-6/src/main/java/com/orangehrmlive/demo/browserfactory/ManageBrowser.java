@@ -10,9 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-/**
- * Created by Jay Vaghani
- */
 public class ManageBrowser {
 
     public static WebDriver driver;

@@ -3,7 +3,9 @@ package com.tutorialsninja.pages;
 import com.tutorialsninja.utility.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
@@ -29,6 +31,10 @@ public class DesktopsPage extends Utility {
     @CacheLookup
     @FindBy(tagName = "(//div[@class='row'])[6]")
     WebElement product;
+
+    @CacheLookup
+    @FindBy(xpath = "//body/div[@id='product-category']/div[@class='row']/div[@id='content']")
+    WebElement products;
 
     public void verifySortedElementsInReverseOrder() {
         List<WebElement> elements = listOfProducts;
@@ -66,5 +72,11 @@ public class DesktopsPage extends Utility {
         sendTextToElement(product, products);
         mouseHoverToElementAndClick(product);
         log.info("Select product from " + products + product.toString());
+    }
+
+    public void selectProductsOption(String products) {
+        WebElement productList = driver.findElement(By.linkText(products));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(productList).click().build().perform();
     }
 }

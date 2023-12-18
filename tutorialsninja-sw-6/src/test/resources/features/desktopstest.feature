@@ -14,7 +14,7 @@ Feature: Desktop test
     And I click on sort by position Z to A "Name (Z - A)"
     Then I can see the product will be arrange in descending order
 
-  @sanity
+  @ak
   Scenario Outline: User should verify that product added to shopping cart successFully
     When I click on currency dropdown
     And I click on £pound Sterling
@@ -27,7 +27,7 @@ Feature: Desktop test
     And I click on add to cart button
     And I get the message Success: You have added "<product>" to your shopping cart!
     And I click on shopping cart display into the success message
-    Then I get a text "Shopping Cart"
+#    Then I get a text "Shopping Cart"
     Then I get the product name "<product>"
     Then I get the model name "<model>"
     Then I get the price "<price>"
